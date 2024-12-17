@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgresDESA:
+    image: postgres:13
+    container_name: postgresDESA
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=hubspot
+    volumes:
+      - hubspotdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+   hubspotdata:
